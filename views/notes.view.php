@@ -7,7 +7,7 @@
                 <a href="/note?id=<?= $note['id'] ?>">
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6 bg-white border-b border-gray-200  hover:bg-gray-100 ">
-                            <h2 class="text-2xl font-bold"><?= $note['body'] ?></h2>
+                            <h2 class="text-2xl font-bold"><?= htmlspecialchars($note['body']) ?></h2>
                         </div>
                     </div>
                 </a>
