@@ -4,13 +4,20 @@
     <main>
         <form class="ml-6 mr-6" method="post">
             <div class="space-y-12">
-                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                <div class="mt-1 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="col-span-full">
                         <label for="body"
                                class="block text-sm font-medium leading-6 text-gray-900">Description</label>
                         <div class="mt-2">
-                                    <textarea id="body" name="body" rows="3"
-                                              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                                    <textarea
+                                        id="body"
+                                        name="body"
+                                        rows="3"
+                                        class="max-w-md block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    ><?= $_POST['body'] ?? '' ?></textarea>
+                            <?php if (isset($errors['body'])) : ?>
+                                <p class="text-red-500 text-xs italic"><?= $errors['body'] ?></p>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
